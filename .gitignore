@@ -34,3 +34,6 @@ node_modules
 node_modules
 
 npm-debug.log
+
+# Ignore env so as not to revel info
+.env
