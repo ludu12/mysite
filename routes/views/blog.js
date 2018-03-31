@@ -7,7 +7,7 @@ exports = module.exports = function (req, res) {
 	var locals = res.locals;
 
 	// Init locals
-	locals.section = 'blog';
+	locals.section = 'Home';
 	locals.filters = {
 		category: req.params.category,
 	};
