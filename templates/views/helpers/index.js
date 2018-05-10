@@ -326,5 +326,19 @@ module.exports = function () {
 		return obj._[underscoreMethod].format();
 	};
 
+
+	//  ### dateFormat call + format helper
+	//	Format date
+	//
+	//  @date: The obj
+	//	@format: string - format string
+	//
+	//  *Usage example:*
+	//  `{{dateFormat post.date 'MMMM Do, YYYY'}}
+
+	_helpers.dateFormat = function (date, format) {
+		return moment(date).format("MMMM Do, YYYY");
+	};
+
 	return _helpers;
 };

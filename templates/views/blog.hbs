@@ -1,32 +1,32 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-sm-8 col-md-9">
+		<div class="col-sm-8">
 			{{!-- Do you want to show the number of posts? --}}
 			{{!-- <h4 class="text-weight-normal">Showing {{ data.posts.results.length}} post.</h4> --}}
-			<div class="col-sm-6">
+			{{!-- <div class="col-sm-6"> --}}
 				{{# each data.posts.results}}
-				<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="post">
-					<div class="row">
+				<article data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="media">
+					
 					{{!-- Do you want to show who this post is by? --}}
 					{{!-- <p class="text-muted">{{{categoryList categories prefix="Posted in "}}}
 							{{#if author.name.first}}by {{author.name.first}}{{/if}}
 					</p> --}}
-					<h5 class="text-muted">{{#if publishedDate}}{{publishedDate}}{{/if}}<h5>
+
+					{{!-- {{#if image}}<img src="{{{cloudinaryUrl image width=160 height=160 crop='fit' }}}" class="img pull-right">{{/if}} --}}		
+					<div class="media-left">
+						{{#if image}}<a href="{{postUrl slug}}"><img src="{{{cloudinaryUrl image width=150 height=150 crop='fit' }}}" class="img-responsive"></a>{{/if}}
 					</div>
-					{{!-- {{#if image}}<img src="{{{cloudinaryUrl image width=160 height=160 crop='fit' }}}" class="img pull-right">{{/if}} --}}
-					<div class="row">
-					{{#if image}}<a href="{{postUrl slug}}"><img src="{{{cloudinaryUrl image width=500 height=300 crop='fit' }}}" class="img-responsive"></a>{{/if}}
+					<div class="media-right">
+						<h3><a href="{{postUrl slug}}">{{{title}}}</a></h3> 
+						<h5 class="text-muted">{{#if publishedDate}}{{dateFormat publishedDate "date"}}{{/if}}<h5>
+						{{#if content.extended}}<a href="{{postUrl slug}}"><h5>{{{content.brief}}}</h5></a>{{/if}}
 					</div>
-					<div class="row">
-					{{!-- <h3><a href="{{postUrl slug}}">{{{title}}}</a></h3> --}}
-					{{#if content.extended}}<a href="{{postUrl slug}}"><h5>{{{content.brief}}}</h5></a>{{/if}}
-					</div>
-				</div>
+				</article>
 				{{/each}}
-			</div>
+			{{!-- </div> --}}
 		</div>
-		<div class="col-sm-4 col-md-3">
+		<div class="col-sm-4">
 			<h2>Categories</h2>
 			<div class="list-group">
 				<a href="/blog" class="active list-group-item">All Categories</a>
