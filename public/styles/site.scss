@@ -1,11 +1,12 @@
 // Bootstrap
 // =========
 
-@import "themes/spacelab/variables";
+@import "themes/sandstone/variables";
 
 // Bootstrap can be removed entirely by deleting this line.
 
 @import "bootstrap/bootstrap";
+
 
 // The easiest way to customise Bootstrap variables while
 // being able to easily override the source files with new
@@ -22,4 +23,4 @@
 
 // Add your own site style includes here
 //@import "site/layout";
-@import "themes/spacelab/bootswatch";
+@import "themes/sandstone/bootswatch";
