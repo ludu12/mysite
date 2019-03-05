@@ -1,23 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 
+// This will be the entry point of our app
 const App = () => {
-    return (
-        <div>
-            <h1> Ramen Noodles </h1>
-            <img style={{ width: '300px', height: '300px' }} src="ramen.jpg" />
-            <h2>Ingredient List</h2>
-            <ul>
-                <li>First Ingredient</li>
-                <li>Second Ingredient</li>
-                <li>Third Ingredient</li>
-            </ul>
-            <h2> Cooking Instructions </h2>
-            <p> Add cooking instructions here </p>
-        </div>
-    );
+  return (
+    // We will add our components here
+    <div />
+  );
 };
 
 ReactDOM.render(
-    <App />,
-    document.querySelector('.react-container'));
+  // We need to wrap our app in provider to make use of redux
+  <Provider>
+    <App />
+  </Provider>,
+  document.querySelector('.react-container'));
