@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import { LOADING_POSTS } from '../actions/actions';
 import { GET_POSTS } from '../actions/actions';
 
-export default function getPost (state = {}, action) {
+export function fetchPosts (state = {}, action) {
 	switch (action.type) {
 		case GET_POSTS:
 			return action.payload;
@@ -10,7 +10,7 @@ export default function getPost (state = {}, action) {
 	return state;
 }
 
-export default function loadingPosts (state = true, action) {
+export function loadingPosts (state = true, action) {
 	switch (action.type) {
 		case LOADING_POSTS:
 			return action.payload;
@@ -19,7 +19,7 @@ export default function loadingPosts (state = true, action) {
 }
 
 const reducers = combineReducers({
-	posts: getPosts,
+	posts: fetchPosts,
 	loadPosts: loadingPosts,
 });
 

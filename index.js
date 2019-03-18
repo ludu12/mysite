@@ -11,8 +11,8 @@ keystone.init({
   'name': 'Ludu\'s Blog',
   // Paths to our application static files
   'static': [
-    './server/public/js/',
-    './server/public/img/',
+    './src/server/public/js/',
+    './src/server/public/img/',
   ],
   // Keystone includes an updates framework, 
   // which you can enable by setting the auto update option to true.
@@ -28,10 +28,10 @@ keystone.init({
 });
 
 // Load your project's Models
-keystone.import('./server/models');
+keystone.import('./src/server/models');
 
 // Load your project's Routes
-keystone.set('routes', require('./server/routes'));
+keystone.set('routes', require('./src/server/routes'));
 
 // Start Keystone
 keystone.start();
