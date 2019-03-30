@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import { LOADING_POSTS } from '../actions/actions';
-import { GET_POSTS } from '../actions/actions';
+import { FETCH_POSTS } from '../actions/actions';
 
 export function fetchPosts (state = {}, action) {
 	switch (action.type) {
-		case GET_POSTS:
+		case FETCH_POSTS:
 			return action.payload;
 	}
 	return state;

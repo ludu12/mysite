@@ -38,3 +38,6 @@ npm-debug.log
 
 # Ignore env so as not to revel info
 .env
+
+# Ignore webpack build
+**/dist/

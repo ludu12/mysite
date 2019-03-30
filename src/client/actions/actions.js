@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Exporting our actions
 export const LOADING_POSTS = 'LOADING_POSTS';
-export const GET_POSTS = 'GET_POSTS';
+export const FETCH_POSTS = 'FETCH_POSTS';
 
 // An action to check if the posts are loaded accepts true or false
 export function loadingPosts(loading) {
@@ -15,7 +15,7 @@ export function loadingPosts(loading) {
 // This will get the posts from the API
 export function fetchPosts(data) {
   return {
-    type: GET_POSTS,
+    type: FETCH_POSTS,
     payload: data,
   };
 }
@@ -23,10 +23,13 @@ export function fetchPosts(data) {
 // This is a redux thunk that will fetch our model data
 export function postsFetchData(url) {
   return (dispatch) => {
-    const request = axios.get(url);
-    request.then((response) => {
-      dispatch(loadingPosts(false));
-      dispatch(fetchPosts(response.data.post));
-    });
+    axios.get(url)
+      .then(res => {
+        dispatch(loadingPosts(false));
+        dispatch(fetchPosts(res.data.posts));
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 }

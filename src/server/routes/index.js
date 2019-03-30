@@ -9,14 +9,15 @@ var routes = {
 
 // Export our app routes
 exports = module.exports = function (app) {
+
   // Get access to the API route in our app
   app.get('/api/post/', keystone.middleware.api, routes.api.post.list);
   // Set up the default app route to  http://localhost:3000/
   app.get('/', function (req, res) {
-// Render some simple boilerplate html
-function renderFullPage () {
-  // Note the div class name here, we will use that as a hook for our React code
-  return `
+    // Render some simple boilerplate html
+    function renderFullPage() {
+      // Note the div class name here, we will use that as a hook for our React code
+      return `
   <!doctype html>
     <html>
       <head>
@@ -30,7 +31,9 @@ function renderFullPage () {
     </html>
     `;
     }
-// Send the html boilerplate
-res.send(renderFullPage());
+
+    res.send(renderFullPage());
+    // Send the html boilerplate
+
   });
 };

@@ -20,9 +20,14 @@ class Post extends Component {
     }
     // Function to render our post
     renderPost() {
-        return (
-            <h2>LOADED!</h2>
-        );
+
+        _.map(this.props.posts, post => {
+            console.log(post);
+        });
+
+        return (_.map(this.props.posts, post => {
+            <h2>{post.title}</h2>
+        }));
     }
     render() {
         if (this.props.loading) {

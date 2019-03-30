@@ -11,8 +11,8 @@ keystone.init({
   'name': 'Ludu\'s Blog',
   // Paths to our application static files
   'static': [
-    './src/server/public/js/',
-    './src/server/public/img/',
+    './src/server/public/dist',
+    './src/server/public/img',
   ],
   // Keystone includes an updates framework, 
   // which you can enable by setting the auto update option to true.
