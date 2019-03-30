@@ -25,11 +25,8 @@ export function postsFetchData(url) {
   return (dispatch) => {
     axios.get(url)
       .then(res => {
-        dispatch(loadingPosts(false));
         dispatch(fetchPosts(res.data.posts));
-      })
-      .catch(err => {
-        console.log(err);
+        dispatch(loadingPosts(false));
       });
   };
 }

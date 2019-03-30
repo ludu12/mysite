@@ -1,16 +1,12 @@
 {
-    "presets": [
+  "env": {
+      "test": {
+          "plugins": ["istanbul"]
+      }
+  },
+  "presets": [
+      "env",
       "react",
-      [
-        "env",
-        {
-          "targets": {
-            "browserlist": [
-              ">2%",
-              "last 2 versions"
-            ]
-          }
-        }
-      ]
-    ]
-  }
+      "stage-0"
+  ]
+}

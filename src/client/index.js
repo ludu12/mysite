@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import reducers from './reducers/reducers';
-import Post from './containers/post'
+import Posts from './containers/posts'
 
 const store = createStore(reducers, applyMiddleware(thunk));
 
@@ -12,7 +12,8 @@ const store = createStore(reducers, applyMiddleware(thunk));
 const App = () => {
   return (
     <div>
-      <Post />
+      <h1>Ludu's Blog</h1>
+      <Posts />
     </div>
   );
 };

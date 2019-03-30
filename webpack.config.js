@@ -45,7 +45,7 @@ module.exports = {
         new BrowserSyncPlugin({
             host: 'localhost',
             port: 3001,
-            server: { baseDir: ['./src/server/public/dist', './assets'] }
+            server: { baseDir: ['./src/server/public/dist'] }
         }),
         new CleanWebpackPlugin(['./src/server/public/dist'])
     ]
