@@ -1,15 +1,8 @@
-// Simulate config options from your production environment by
-// customising the .env file in your project's root folder.
 require('dotenv').config();
 
-//import keystone
 var keystone = require('keystone');
-
-// Set up our keystone instance
 keystone.init({
-  // The name of the KeystoneJS application
   'name': 'Ludu\'s Blog',
-  // Paths to our application static files
   'static': [
     './src/server/public/dist',
     './src/server/public/img',
@@ -27,15 +20,12 @@ keystone.init({
   'user model': 'User'
 });
 
-// Load your project's Models
 keystone.import('./src/server/models');
 
-// Load your project's Routes
 keystone.set('routes', require('./src/server/routes'));
 
 keystone.set('cors allow origin', true);
 keystone.set('cors allow methods', true);
 keystone.set('cors allow headers', true);
 
-// Start Keystone
 keystone.start();
