@@ -1,37 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Post extends Component {
-
-    constructor(props) {
-        super(props);
-    }
-
-    renderBrief(value) {
+const Post = (post) => {
+    const { value, brief } = post;
+    if (brief === true) {
         return (
             <div>
                 <h2>{value.title}</h2>
-                <div dangerouslySetInnerHTML={{__html: value.content.brief}}/>
+                <div dangerouslySetInnerHTML={{ __html: value.content.brief }} />
             </div>
         );
-    }
-
-    renderExtended(value) {
+    } else {
         return (
             <div>
                 <h2>{value.title}</h2>
-                <div dangerouslySetInnerHTML={{__html: value.content.extended}}/>
+                <div dangerouslySetInnerHTML={{ __html: value.content.extended }} />
             </div>
         );
     }
+};
 
-    render() {
-        const { value, brief } = this.props;
-        console.log(value);
-        if (brief === true) {
-            return this.renderBrief(value);
-        }
-        else {
-            return this.renderExtended(value);
-        }
-    }
-}
+export default Post;

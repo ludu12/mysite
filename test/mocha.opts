@@ -1,0 +1,6 @@
+--require jsdom-global/register
+--require @babel/register
+--require test/setup-mocha.js
+--require ignore-styles
+--recursive
+test/**/*.spec.js

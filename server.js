@@ -33,5 +33,9 @@ keystone.import('./src/server/models');
 // Load your project's Routes
 keystone.set('routes', require('./src/server/routes'));
 
+keystone.set('cors allow origin', true);
+keystone.set('cors allow methods', true);
+keystone.set('cors allow headers', true);
+
 // Start Keystone
 keystone.start();
