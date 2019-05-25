@@ -1,4 +1,4 @@
-import React from './node_modules/react';
+import React from 'react';
 import Posts from './posts';
 
 export default class App extends React.Component {
