@@ -15,7 +15,6 @@ export default class Post extends Component {
         );
     }
 
-
     renderExtended(value) {
         return (
             <div>
