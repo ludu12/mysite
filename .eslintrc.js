@@ -34,7 +34,7 @@ module.exports = {
         'eqeqeq': 'error',
         'func-call-spacing': ['error', 'never'],
         "jsx-quotes": ["error", "prefer-single"],
-        'indent': ['error', 4],
+        'indent': ['error', 2],
         'no-extra-semi': 'error',
         'no-multi-spaces': 'error',
         'no-var': 'error',

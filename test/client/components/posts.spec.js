@@ -12,32 +12,32 @@ const sandbox = sinon.createSandbox();
 const chance = new Chance();
 
 describe('Posts', () => {
-    let wrapper;
+  let wrapper;
 
-    beforeEach(() => {
-        sandbox.stub(axios, 'get');
-    });
+  beforeEach(() => {
+    sandbox.stub(axios, 'get');
+  });
 
-    afterEach(() => {
-        sandbox.restore();
-    });
+  afterEach(() => {
+    sandbox.restore();
+  });
 
-    describe('when rendering page before loaded', () => {
+  describe('when rendering page before loaded', () => {
 
-        beforeEach(async () => {
-            axios.get.resolves(
-                {
-                    data: {
-                        posts: []
-                    }
-                });
+    beforeEach(async () => {
+      axios.get.resolves(
+        {
+          data: {
+            posts: []
+          }
+        });
             
-            wrapper = shallow(<Posts />);
-            wrapper.update();
-        });
-
-        it('should display loading', () => {
-            expect(axios.get).to.have.callCount(1);
-        });
+      wrapper = shallow(<Posts />);
+      wrapper.update();
     });
+
+    it('should display loading', () => {
+      expect(axios.get).to.have.callCount(1);
+    });
+  });
 });

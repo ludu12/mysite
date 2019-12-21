@@ -8,9 +8,15 @@
  */
 
 exports.create = {
-	User: [
-		{ 'name.first': 'ADMIN', 'name.last': 'USER', email: 'admin@keystonejs.com', 'password': 'PASSWORD', 'isAdmin': true },
-	],
+  User: [
+    {
+      'name.first': 'ADMIN',
+      'name.last': 'USER',
+      email: 'admin@keystonejs.com',
+      'password': 'PASSWORD',
+      'isAdmin': true
+    },
+  ],
 };
 
 /*

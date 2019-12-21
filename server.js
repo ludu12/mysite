@@ -2,7 +2,7 @@ require('dotenv').config();
 
 var keystone = require('keystone');
 keystone.init({
-  'name': 'Ludu\'s Blog',
+  'name': 'Luke Dunscombe',
   'static': [
     './src/server/public/dist',
     './src/server/public/img',
