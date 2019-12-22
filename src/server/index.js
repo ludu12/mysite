@@ -7,12 +7,14 @@ import { UserSchema } from './lists/user';
 import { PostSchema } from './lists/post';
 import { PostCategorySchema } from './lists/post-category';
 import { PasswordAuthStrategy } from '@keystonejs/auth-password';
+import { initializeData } from './initial-data';
 
 const PROJECT_NAME = 'mysite';
 
 export const keystone = new Keystone({
   name: PROJECT_NAME,
   adapter: new Adapter(),
+  onConnect: initializeData,
 });
 
 keystone.createList('User', UserSchema);
