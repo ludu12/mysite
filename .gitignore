@@ -17,6 +17,7 @@ coverage
 .grunt
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
+build
 build/Release
 
 # Dependency directory
@@ -40,6 +41,6 @@ npm-debug.log
 .env
 
 # Ignore webpack build
-**/dist/
+dist
 
 .idea/

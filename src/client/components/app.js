@@ -1,13 +1,31 @@
 import React from 'react';
-import Posts from './posts';
+import { useGraphql } from '../hooks/useGraphql';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <h1>Ludu's Blog</h1>
-        <Posts />
-      </div>
-    );
-  }
-}
+const GET_TODOS = `
+    query GetTodos {
+      allTodos {
+        name
+        id
+      }
+    }
+  `;
+
+const App = () => {
+  const { data, loading } = useGraphql(GET_TODOS);
+
+  const results = () => {
+    if (loading) {
+      return <p>Loading...</p>;
+    }
+    return <p>{JSON.stringify(data, null, 2)}</p>;
+  };
+  
+  return (
+    <div className='app'>
+      <h1>Todo list</h1>
+      {results()}
+    </div>
+  );
+};
+
+export default App;
