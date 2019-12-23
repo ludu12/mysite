@@ -17,9 +17,14 @@ export const PostSchema = {
     title: { type: Text, isRequired: true },
     state: { type: Select, options: 'draft, published, archived' },
     author: { type: Relationship, ref: 'User.posts' },
+    publishedDate: {
+      type: DateTime, 
+      format: 'MM/DD/YYYY h:mm A',
+      yearPickerType: 'auto',
+    },
     image: { type: CloudinaryImage, adapter: cloudinaryAdapter },
-    // brief: { type: Wysiwyg, height: 150 },
-    // extended: { type: Wysiwyg, height: 400 },
+    brief: { type: Wysiwyg, height: 150 },
+    extended: { type: Wysiwyg, height: 400 },
     categories: { type: Relationship, ref: 'PostCategory', many: true },
   }
 };

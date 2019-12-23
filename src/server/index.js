@@ -29,7 +29,7 @@ const authStrategy = keystone.createAuthStrategy({
 
 export const apps = [
   new GraphQLApp(),
-  new StaticApp({ path: '/', src: 'dist' }),
+  new StaticApp({ path: '/', src: 'public' }),
   new AdminUIApp({ enableDefaultRoute: true, authStrategy }),
 ];
 
