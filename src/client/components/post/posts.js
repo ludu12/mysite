@@ -1,11 +1,11 @@
 import React from 'react';
 import { useGraphql } from '../../hooks/useGraphql';
-import Post from './post';
+import PostPreview from './post-preview';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
+import './post.scss';
 
-const GET_POSTS = 'query GetPosts { allPosts { title id image { publicUrl } } }';
+
+const GET_POSTS = 'query GetPosts { allPosts { title id state image { publicUrl } brief extended } }';
 
 const Posts = () => {
   const { data, loading } = useGraphql(GET_POSTS);
@@ -14,14 +14,13 @@ const Posts = () => {
     if (loading) {
       return <CircularProgress color='inherit'/>;
     }
-    return data.data.allPosts.map(post => (<Post key={post.id} post={post}/>));
+    return data.data.allPosts.map(post => (<PostPreview key={post.id} post={post}/>));
   };
 
   return (
-    <Paper className='posts' elevation={1} square={true}>
-      <Typography variant="h5" component="h3">Posts</Typography>
+    <div className='posts'>
       {results()}
-    </Paper>
+    </div>
   );
 };
 
