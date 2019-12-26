@@ -20,6 +20,9 @@ const Posts = () => {
   return (
     <div className='posts'>
       {results()}
+      {results()}
+      {results()}
+      {results()}
     </div>
   );
 };

@@ -9,6 +9,9 @@ const App = () => {
     <ErrorBoundary>
       <div className='app'>
         <Bar/>
+        <div>
+          <p>Hi, I&#39;m Luke Dunscombe and I&#39;m a professional software developer from Des, Moines.</p>
+        </div>
         <Posts/>
       </div>
     </ErrorBoundary>
