@@ -21,7 +21,7 @@ const Bar = () => {
             <IconButton href='https://twitter.com/LukeDunscombe'>
               <TwitterIcon/>
             </IconButton>
-            <IconButton href='https://twitter.com/LukeDunscombe'>
+            <IconButton href='https://github.com/ludu12'>
               <GithubIcon/>
             </IconButton>
           </div>
