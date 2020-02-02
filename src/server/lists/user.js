@@ -22,6 +22,7 @@ export const UserSchema = {
     isAdmin: { type: Checkbox },
     password: { type: Password, isRequired: true, },
     posts: { type: Relationship, ref: 'Post.author', many: true },
+    projects: { type: Relationship, ref: 'Project.user', many: true },
   },
   access: {
     read: access.userIsAdminOrOwner,

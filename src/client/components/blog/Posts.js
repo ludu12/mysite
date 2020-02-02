@@ -1,9 +1,7 @@
 import React from 'react';
 import { useGraphql } from '../../hooks/useGraphql';
-import PostPreview from './post-preview';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import './post.scss';
-
+import PostPreview from './PostPreview';
 
 const GET_POSTS = 'query GetPosts { allPosts { title id state image { publicUrl } brief extended } }';
 
@@ -18,10 +16,7 @@ const Posts = () => {
   };
 
   return (
-    <div className='posts'>
-      {results()}
-      {results()}
-      {results()}
+    <div>
       {results()}
     </div>
   );

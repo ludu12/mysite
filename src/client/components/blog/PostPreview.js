@@ -12,9 +12,8 @@ const PostPreview = ({ post }) => {
     return { __html: `${post.brief}` };
   };
 
-
   return (
-    <div className='post preview'>
+    <div>
       <ExpansionPanel>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
           <Typography>{post.title}</Typography>
