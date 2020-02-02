@@ -6,7 +6,8 @@
   "author": "Luke Dunscombe",
   "license": "ISC",
   "engines": {
-    "node": ">=8.4.0"
+    "node": ">=8.4.0",
+    "yarn": ">=1.12.3"
   },
   "scripts": {
     "clean": "rimraf ./dist && rimraf ./build && rimraf ./public",
