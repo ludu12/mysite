@@ -2,7 +2,7 @@
 
 ### Production
 ```
-yarn run build
+yarn build
 yarn start
 ```
 
@@ -14,18 +14,14 @@ docker-compose down
 ```
 Then run
 ```
-yarn run start:dev
-```
-
-### Locally with watch
-```
-(1) ~ yarn run start:dev:watch
-(2) ~ yarn run client
+yarn develop
 ```
 
 ### Dependencies
 The architecture is as follows:
 
+Client: [GatsbyJS](https://www.gatsbyjs.org/)  
+Server(CMS): [KeystoneJS](https://www.keystonejs.com/)  
 Deployment and Web Hosting: [Heroku](https://dashboard.heroku.com/apps/lukedunscombe)  
 Domain hosting: [GoDaddy](https://dcc.godaddy.com/manage/lukedunscombe.com/settings)  
 Database hosting: [MongoDB Atlas](https://cloud.mongodb.com/v2/5e36e1f65538554dda54c0ec#clusters)  
