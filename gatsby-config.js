@@ -1,11 +1,28 @@
+require('dotenv').config();
+
 module.exports = {
   siteMetadata: {
     title: `Luke Dunscombe`,
     description: `My Personal Website`,
-    author: `@ludu12`,
+    author: `@LukeDunscombe`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-graphql`,
+      options: {
+        // Arbitrary name for the remote schema Query type
+        typeName: `KeystoneJS`,
+        // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
+        fieldName: `cms`,
+        // Url to query from
+        // url: `https://api-euwest.graphcms.com/v1/cjjr1at6d0xb801c3scjrm0l0/master`,
+        url: `${process.env.API_URL}`,
+        // refetch interval in seconds
+        refetchInterval: 60,
+      },
+    },
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-react-helmet`, 
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -19,7 +36,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
-        short_name: `starter`,
+        short_name: `starwter`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,

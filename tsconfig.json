@@ -9,6 +9,6 @@
     "lib": ["dom", "esnext"]
   },
   "include": [
-    "./src/gatsby/*"
+    "./src/**/*"
   ]
 }

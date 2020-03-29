@@ -1,12 +1,12 @@
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
 
-import Header from '../header';
+import Navbar from '../navbar';
 
 describe('Header', () => {
 	it('renders correctly', () => {
 		const tree = renderer
-			.create(<Header siteTitle="Default Starter" />)
+			.create(<Navbar siteTitle="Default Starter" />)
 			.toJSON();
 		expect(tree).toMatchSnapshot();
 	});

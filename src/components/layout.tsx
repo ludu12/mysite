@@ -6,47 +6,32 @@
  */
 
 import * as React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
 
-import Header from './header';
-import './layout.css';
-
-const Layout = (props: LayoutProps) => (
-	<StaticQuery
-		query={graphql`
-			query SiteTitleQuery {
-				site {
-					siteMetadata {
-						title
-					}
-				}
-			}
-		`}
-		render={data => (
-			<>
-				<Header siteTitle={data.site.siteMetadata.title} />
-				<div
-					style={{
-						margin: `0 auto`,
-						maxWidth: 960,
-						padding: `0px 1.0875rem 1.45rem`,
-						paddingTop: 0,
-					}}
-				>
-					<main>{props.children}</main>
-					<footer>
-						© {new Date().getFullYear()}, Built with
-						{` `}
-						<a href="https://www.gatsbyjs.org">Gatsby</a>
-					</footer>
-				</div>
-			</>
-		)}
-	/>
-);
+import Navbar from './navbar';
+import theme from '../styles/theme';
+import { ThemeProvider } from 'styled-components';
+import SEO from './seo';
+import { Container } from './global';
+import GlobalStyles from '../styles/global-styles';
 
 interface LayoutProps {
-	children: any;
+	children: any
+	siteTitle: string
 }
+
+const Layout: React.FC<LayoutProps> = (props) => (
+	<ThemeProvider theme={theme}>
+		<>
+			<SEO title={props.siteTitle}/>
+			<GlobalStyles/>
+			<Navbar/>
+			<Container>
+				<section id={props.siteTitle}>
+					<main>{props.children}</main>
+				</section>
+			</Container>
+		</>
+	</ThemeProvider>
+);
 
 export default Layout;

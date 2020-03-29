@@ -9,7 +9,24 @@ import * as React from 'react';
 import Helmet from 'react-helmet';
 import { graphql, useStaticQuery } from 'gatsby';
 
-function SEO(props: SEOProps) {
+interface SEOProps {
+	description?: string;
+	lang?: string;
+	meta?: MetaWithProperty[] | MetaWithName[];
+	title: string;
+}
+
+interface MetaWithProperty {
+	property: string;
+	content: string;
+}
+
+interface MetaWithName {
+	name: string;
+	content: string;
+}
+
+const SEO: React.FC<SEOProps> = (props) => {
 	const { site } = useStaticQuery(
 		graphql`
 			query {
@@ -21,7 +38,7 @@ function SEO(props: SEOProps) {
 					}
 				}
 			}
-		`
+		`,
 	);
 
 	const metaDescription = props.description || site.siteMetadata.description;
@@ -65,10 +82,10 @@ function SEO(props: SEOProps) {
 				},
 			].concat(props.meta)}
 		>
-			<html lang={props.lang} />
+			<html lang={props.lang}/>
 		</Helmet>
 	);
-}
+};
 
 SEO.defaultProps = {
 	lang: `en`,
@@ -76,21 +93,5 @@ SEO.defaultProps = {
 	description: ``,
 };
 
-interface SEOProps {
-	description?: string;
-	lang?: string;
-	meta?: MetaWithProperty[] | MetaWithName[];
-	title: string;
-}
-
-interface MetaWithProperty {
-	property: string;
-	content: string;
-}
-
-interface MetaWithName {
-	name: string;
-	content: string;
-}
 
 export default SEO;
