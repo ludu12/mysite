@@ -45,3 +45,9 @@ dist
 public
 
 .idea/
+
+# gatsby files
+.cache/
+public
+dist
+
