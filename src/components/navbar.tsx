@@ -29,10 +29,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
 					<Link to={`/`}>Home</Link>
 				</NavItem>
 				<NavItem>
-					<Link to={`/page-2`}>Page 2</Link>
-				</NavItem>
-				<NavItem>
-					<Link to={`/page-3`}>Page 3</Link>
+					<Link to={`/about`}>About</Link>
 				</NavItem>
 			</Scrollspy>
 		</NavListWrapper>

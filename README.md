@@ -15,6 +15,10 @@ docker-compose down
 Then run
 ```
 yarn develop
+
+or
+[1]~ yarn server
+[2]~ yarn client
 ```
 
 ### Dependencies

@@ -21,8 +21,8 @@ const theme = {
       regular: '#211E26',
     },
 		primary: '#ffffff',
-		secondary: '#30b5a5',
-		accent: '#c6de6e'
+		secondary: '#253ab5',
+		accent: '#30b5a5'
   },
   screen: {
     xs: '575px',
