@@ -18,7 +18,7 @@ module.exports = {
         // url: `http://mysitecms-env.eba-ygyhwp3v.us-east-2.elasticbeanstalk.com/admin/api`,
         url: `${process.env.API_URL}`,
         // refetch interval in seconds
-        refetchInterval: 60,
+        refetchInterval: 30,
       },
     },
     `gatsby-plugin-styled-components`,
