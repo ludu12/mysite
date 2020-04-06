@@ -15,7 +15,7 @@ module.exports = {
         // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
         fieldName: `cms`,
         // Url to query from
-        // url: `https://api-euwest.graphcms.com/v1/cjjr1at6d0xb801c3scjrm0l0/master`,
+        // url: `http://mysitecms-env.eba-ygyhwp3v.us-east-2.elasticbeanstalk.com/admin/api`,
         url: `${process.env.API_URL}`,
         // refetch interval in seconds
         refetchInterval: 60,
