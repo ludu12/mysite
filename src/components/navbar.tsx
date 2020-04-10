@@ -21,7 +21,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
 	const renderNavList = (mobile = false) => (
 		<NavListWrapper mobile={mobile}>
 			<Scrollspy
-				items={['Home', 'Page Two', 'Page Three']}
+				items={['Home', 'About']}
 				currentClassName="active"
 				offset={-64}
 			>

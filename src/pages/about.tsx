@@ -8,7 +8,7 @@ interface AboutPageProps {
 
 const About: React.FC<AboutPageProps> = props => {
 	return (
-		<Layout siteTitle='Page Two'>
+		<Layout siteTitle='About'>
 			<h1>Hi from the second page</h1>
 			<p>Welcome to page 2</p>
 			<p>{JSON.stringify(props.data)}</p>
