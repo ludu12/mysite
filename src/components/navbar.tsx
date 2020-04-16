@@ -1,10 +1,10 @@
 import { graphql, Link, StaticQuery } from 'gatsby';
 import * as React from 'react';
 import { useState } from 'react';
-import { Art, Container, Mobile, MobileMenu, Nav, NavItem, NavListWrapper, NonMobile, StyledContainer } from './global';
+import { Container, Nav, NavItem, NavListWrapper, StyledContainer } from './global';
 import Img from 'gatsby-image';
 import Scrollspy from 'react-scrollspy';
-import { FiMenu as Menu } from 'react-icons/fi';
+import BurgerMenuButton from './buger-menu-button';
 import styled from 'styled-components';
 
 interface NavbarProps {
@@ -14,14 +14,10 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = (props) => {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
 
-	const toggleMobileMenu = () => {
-		setMobileMenuOpen(!mobileMenuOpen);
-	};
-
 	const renderNavList = (mobile = false) => (
 		<NavListWrapper mobile={mobile}>
 			<Scrollspy
-				items={['Home', 'About']}
+				items={['Home', 'Projects']}
 				currentClassName="active"
 				offset={-64}
 			>
@@ -29,7 +25,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
 					<Link to={`/`}>Home</Link>
 				</NavItem>
 				<NavItem>
-					<Link to={`/about`}>About</Link>
+					<Link to={`/projects`}>Projects</Link>
 				</NavItem>
 			</Scrollspy>
 		</NavListWrapper>
@@ -39,9 +35,9 @@ const Navbar: React.FC<NavbarProps> = (props) => {
 		<StaticQuery
 			query={graphql`
             query {
-            	me: file(relativePath: { eq: "gatsby-icon.png" }) {
+            	me: file(relativePath: { eq: "me.jpg" }) {
                 childImageSharp {
-                  fluid(maxWidth: 760) {
+                  fluid(maxWidth: 640) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -51,29 +47,12 @@ const Navbar: React.FC<NavbarProps> = (props) => {
 			render={data => (
 				<Nav {...props}>
 					<StyledContainer>
-						<Art>
-							<Link to='/'>
-								<Avatar fluid={data.me.childImageSharp.fluid}/>
-							</Link>
-						</Art>
-						
-						<NonMobile>
-							{renderNavList()}
-						</NonMobile>
-
-						<Mobile>
-							<MenuButton onClick={toggleMobileMenu}>
-								<Menu size={32}/>
-							</MenuButton>
-						</Mobile>
+						<Link to='/'>
+							<Avatar fluid={data.me.childImageSharp.fluid}/>
+						</Link>
+						<BurgerMenuButton open={mobileMenuOpen} onClick={() => setMobileMenuOpen(!mobileMenuOpen)} />
 					</StyledContainer>
-					<Mobile>
-						{mobileMenuOpen && (
-							<MobileMenu>
-								<Container>{renderNavList(true)}</Container>
-							</MobileMenu>
-						)}
-					</Mobile>
+					{mobileMenuOpen && <Container>{renderNavList(true)}</Container>}
 				</Nav>
 			)}
 		/>
@@ -81,9 +60,16 @@ const Navbar: React.FC<NavbarProps> = (props) => {
 };
 
 const Avatar = styled(Img)`
-  width: 96px;
-  height: 96px;
-  border-radius: calc(96 / 2 * 1px);
+		width: 48px;
+		height: 48px;
+	  border-radius: calc(48 / 2 * 1px);
+    ${props => `
+    @media (min-width: ${props.theme.screen.md}) {
+      width: 96px;
+  		height: 96px;
+ 		  border-radius: calc(96 / 2 * 1px);
+    }
+  `}
 `;
 
 const MenuButton = styled.button`

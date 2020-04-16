@@ -16,7 +16,7 @@ export const Art = styled.figure`
 `;
 
 export const Container = styled.div`
-  max-width: 1200px;
+  max-width: 540px;
   width: 100%;
   margin: 0 auto;
   padding: 0 16px;
@@ -37,23 +37,6 @@ export const Container = styled.div`
     max-width: 1200px;
   }
 `;
-
-// export const Section = styled.section`
-//   padding: 180px 0;
-//   overflow: hidden;
-//
-//   @media (max-width: ${props => props.theme.screen.md}) {
-//     padding: 96px 0;
-//   }
-//
-//   ${props =>
-//     props.accent &&
-//     `background-color: ${
-//         props.accent === 'secondary'
-//             ? props.theme.color.white.dark
-//             : props.theme.color.primary
-//     }`};
-// `;
 
 export const Nav = styled.nav`
   padding: 16px 0;
@@ -108,11 +91,6 @@ export const NavItem = styled.li`
       color:${props => props.theme.color.accent};
     }
   }
-`;
-
-export const Brand = styled.div`
-  font-family: ${props => props.theme.font.primary};
-  ${props => props.theme.font_size.large};
 `;
 
 export const MobileMenu = styled.div`

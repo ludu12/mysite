@@ -9,6 +9,7 @@ const GlobalStyles = createGlobalStyle`
   
   body {
     font-family: 'Baloo', sans-serif;
+    background: '#211E26';
   }
   
   h1, h2, h3, p {

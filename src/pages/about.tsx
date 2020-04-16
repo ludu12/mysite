@@ -25,7 +25,7 @@ export default About;
 export const query = graphql`
 	query {
 		cms {
-			allPosts {
+			allProjects {
 				title
 			}
 		}
