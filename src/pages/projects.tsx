@@ -20,6 +20,7 @@ Projects.defaultProps = {
 	data: null,
 };
 
+export default Projects;
 
 export const query = graphql`
 	query {
